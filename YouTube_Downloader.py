@@ -39,14 +39,15 @@ while True:
             continue
 
     os.makedirs('Downloads', exist_ok=True)
+    filename = str(input('What would you like to name your file? '))
 
     print('Downloading...')
 
     if dl.upper() == "A":
-        video.streams.get_audio_only().download('Downloads')
+        video.streams.get_audio_only().download('Downloads', filename)
 
     elif dl.upper() == "V":
-        video.streams.get_highest_resolution().download('Downloads')
+        video.streams.get_highest_resolution().download('Downloads', filename)
 
     print("Done!")
 
